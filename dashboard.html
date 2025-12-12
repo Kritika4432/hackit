@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdeaLaunch | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="overflow:hidden;">
+
+    <nav style="padding: 15px 50px;">
+        <div class="logo">Idea<span>Launch</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="dashboard.html" style="color:var(--accent)">Dashboard</a>
+        </div>
+        <div style="display:flex; gap:15px; align-items:center;">
+            <i class="fas fa-bell"></i>
+            <div style="width:35px; height:35px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold;">JD</div>
+        </div>
+    </nav>
+
+    <div class="dash-container">
+        <aside class="dash-side">
+            <a href="#" class="dash-link active" style="display:block; padding:10px; color:var(--accent); background:rgba(255,255,255,0.05); border-radius:5px;"><i class="fas fa-home"></i> Overview</a>
+            <a href="#" class="dash-link" style="display:block; padding:10px; color:var(--text-muted); margin-top:5px;"><i class="fas fa-laptop-code"></i> My Competitions</a>
+            <a href="#" class="dash-link" style="display:block; padding:10px; color:var(--text-muted); margin-top:5px;"><i class="fas fa-file-code"></i> Submissions</a>
+            <a href="#" class="dash-link" style="display:block; padding:10px; color:var(--text-muted); margin-top:5px;"><i class="fas fa-chart-line"></i> Leaderboard</a>
+        </aside>
+
+        <main class="dash-main">
+            <h2>Welcome back, John!</h2>
+            <div class="grid-3" style="margin-top:20px;">
+                <div class="card">
+                    <h4 style="color:var(--text-muted); font-weight:normal;">Global Rank</h4>
+                    <div style="font-size:2.5rem; color:var(--accent); font-weight:bold;">#42</div>
+                </div>
+                <div class="card">
+                    <h4 style="color:var(--text-muted); font-weight:normal;">Challenges Won</h4>
+                    <div style="font-size:2.5rem; color:var(--secondary); font-weight:bold;">3</div>
+                </div>
+                <div class="card">
+                    <h4 style="color:var(--text-muted); font-weight:normal;">Submissions</h4>
+                    <div style="font-size:2.5rem; color:#ff4757; font-weight:bold;">12</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:40px; margin-bottom:20px;">My Challenges</h3>
+            <div class="card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <div>
+                    <h4>Portfolio Builder</h4>
+                    <span class="badge beg">Beginner</span>
+                </div>
+                <div style="text-align:right;">
+                    <div style="color:var(--secondary); font-weight:bold;">In Progress</div>
+                    <button class="btn btn-primary" style="padding:5px 15px; font-size:0.8rem; margin-top:5px;">Submit Code</button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="dash-right">
+            <h3>Notifications</h3>
+            <div style="margin-top:20px; font-size:0.9rem;">
+                <div style="margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid var(--glass-border);">
+                    <i class="fas fa-trophy" style="color:var(--secondary); margin-right:5px;"></i> You ranked <strong>#5</strong> in Python Sprint!
+                </div>
+                <div>
+                    <i class="fas fa-envelope" style="color:var(--accent); margin-right:5px;"></i> New team invitation received.
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

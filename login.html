@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdeaLaunch | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error { color: #ff4757; font-size: 13px; font-weight: bold; display: block; margin-top: 5px; }
+        input { margin-bottom: 5px; }
+    </style>
+</head>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh;">
+
+    <div class="card" style="width:100%; max-width:400px; text-align:left;">
+        <h2 style="text-align:center; margin-bottom:20px;">Access IdeaLaunch</h2>
+        
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); border-radius:5px; color:white;">
+            <span id="nameError" class="error"></span>
+         
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); border-radius:5px; color:white;">
+            <span id="emailError" class="error"></span>
+         
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); border-radius:5px; color:white;">
+            <span id="passwordError" class="error"></span>
+         
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); border-radius:5px; color:white;">
+            <span id="ageError" class="error"></span>
+         
+            <button type="button" class="btn btn-primary" style="width:100%; margin-top:20px;" onclick="validateForm()">Login</button>
+        </form>
+    </div>
+     
+    <script>
+        function validateForm() {
+             // Clear previous error messages
+             document.getElementById("nameError").textContent = "";
+             document.getElementById("emailError").textContent = "";
+             document.getElementById("passwordError").textContent = "";
+             document.getElementById("ageError").textContent = "";
+         
+             let isValid = true;
+         
+             // Name validation
+             const name = document.getElementById("name").value.trim();
+             if (name === "") {
+                document.getElementById("nameError").textContent = "Name is required.";
+                isValid = false;
+             }
+         
+             // Email validation
+             const email = document.getElementById("email").value.trim();
+             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+             if (email === "") {
+                document.getElementById("emailError").textContent = "Email is required.";
+                isValid = false;
+             } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Invalid email format.";
+                isValid = false;
+             }
+         
+             // Password validation
+             const password = document.getElementById("password").value.trim();
+             if (password === "") {
+                document.getElementById("passwordError").textContent = "Password is required.";
+                isValid = false;
+             } else if (password.length < 6) {
+                document.getElementById("passwordError").textContent = "Password must be at least 6 characters long.";
+                isValid = false;
+             }
+         
+             // Age validation
+             const age = document.getElementById("age").value.trim();
+             if (age === "") {
+                document.getElementById("ageError").textContent = "Age is required.";
+                isValid = false;
+             } else if (isNaN(age) || age <= 0) {
+                document.getElementById("ageError").textContent = "Age must be a positive number.";
+                isValid = false;
+             }
+         
+             // If all validations pass
+             if (isValid) {
+                alert("Login successful!");
+                window.location.href = "dashboard.html";
+             }
+        }
+    </script>
+</body>
+</html>
